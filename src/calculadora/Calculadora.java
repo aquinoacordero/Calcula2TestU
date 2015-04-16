@@ -1,8 +1,17 @@
 package calculadora;
 
+import java.util.Scanner;
+
 public class Calculadora {
 
+    public static void main(String[] args) {
+        Modelo mode = new Modelo();
+        Calculadora calc=new Calculadora();
+        Vista.imprimir(calc.realizaOperacion(mode.getNum1(), mode.getNum2(), mode.getOperacion()));
+    }
+
     public String realizaOperacion(float n1, float n2, String op) {
+        Scanner dato=new Scanner(System.in);
         if ("sumar".equals(op)) {
             return ("suma=" + (n1 + n2));
         }
@@ -17,11 +26,6 @@ public class Calculadora {
         } else {
             return "inroduce operación valida";
         }
-
-    }
-
-    public static void main(String[] args) {
-        Modelo mode = new Modelo();
 
     }
 
